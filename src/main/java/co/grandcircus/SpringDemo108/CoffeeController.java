@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CoffeeController {
 	
 	@Autowired
-	private Person p;
+	RegistrationRepository p;
 	
 	@RequestMapping("/")
 	public ModelAndView index() {

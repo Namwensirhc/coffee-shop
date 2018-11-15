@@ -1,15 +1,20 @@
 package co.grandcircus.SpringDemo108;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Component
+@Entity
 public class Person {
 	
 	public Person (){	
 		
-		System.out.println();
+		
 	}
-	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private Integer id;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -29,6 +34,15 @@ public class Person {
 		this.password = password;
 	}
 
+	public Person(Integer id, String firstName, String lastName, String email, String phone, String password) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+		this.password = password;
+	}
 
 	public String getFirstName() {
 		return firstName;
